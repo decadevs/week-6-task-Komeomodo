@@ -149,11 +149,7 @@ class MainActivity : AppCompatActivity() {
                     phoneNumberError.visibility = View.VISIBLE
                     phoneNumberBorder.setStroke(1, ContextCompat.getColor(baseContext,R.color.colorAccent))
                     phoneNumberLabelBackground.setColor(ContextCompat.getColor(baseContext,R.color.colorAccent))
-                    if(validator.isValidPhoneNumber(s) || s.isNotEmpty()){
-                        phoneNumberLabel.setTextColor(Color.parseColor("#EEEEEE"))
-                    }else{
-                        phoneNumberLabel.setTextColor(Color.parseColor("#EE5F49"))
-                    }
+//
                 }
             }
         })
