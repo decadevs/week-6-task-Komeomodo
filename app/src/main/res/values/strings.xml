@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">RegistrationForm</string>
+    <string name="logoText">Sign up</string>
+    <string name="fullNamePlaceholder">Enter your name here</string>
+    <string name="phoneNumberPlaceholder">What\'s your Phone number?</string>
+    <string name="emailPlaceholder">What\'s your email?</string>
+    <string name="fullNameLabel">your full name</string>
+    <string name="emailLabel">your email</string>
+    <string name="phoneNumberLabel">phone number</string>
+    <string name="signIn">Already have an account?</string>
+    <string name="fullNameError">Please enter only alphabetical characters.</string>
+    <string name="phoneNumberError">Incorrect Mobile Number</string>
+    <string name="emailError">Invalid email address</string>
+    <string name="genderText">Gender:</string>
+    <string name="userImage">logo</string>
+</resources>
