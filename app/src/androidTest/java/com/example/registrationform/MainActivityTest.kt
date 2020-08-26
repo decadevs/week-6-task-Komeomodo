@@ -34,7 +34,7 @@ class MainActivityTest {
         onView(withId(R.id.main)).check(matches(isDisplayed()))
     }
 
-
+// checks the visibility of the text
     @Test
     fun testVisibility_title() {
         val activityScenario = ActivityScenario.launch(MainActivity::class.java)
@@ -60,24 +60,36 @@ class MainActivityTest {
             .check(matches(withText(R.string.logoText)))
     }
 
+    // checks if the Error message displays
     @Test
     fun shouldDisplaySinInErrorWhenEmailIsIncorrect() {
         val activityScenario = ActivityScenario.launch(MainActivity::class.java)
         val incorrectEmail = "Invalid email address"
+        val incorrectPhoneNumber = "Incorrect Mobile Number"
+        val EmptyNameInput = "Please enter only alphabetical characters."
 
-//        onView(withId(R.id.email)).perform(replaceText(incorrectEmail),closeSoftKeyboard())
+        onView(withId(R.id.email)).perform(replaceText(incorrectEmail),closeSoftKeyboard())
+//        onView(withId(R.id.phoneNumberError)).perform(replaceText(incorrectPhoneNumber),closeSoftKeyboard())
+        onView(withId(R.id.fullNameError)).perform(replaceText(EmptyNameInput),closeSoftKeyboard())
 
-//        onView(withId(R.id.button)).perform(click())
 
-        onView(withText(R.string.emailError)).check(matches(isDisplayed()))
+
     }
 
+//    check click on the button
+    @Test
+    fun validate_button_click(){
+        onView(withId(R.id.button)).perform(click())
+    }
+
+//    check the Edit fields
     @Test
     fun validateEditText_name() {
         val activityScenario = ActivityScenario.launch(MainActivity::class.java)
         onView(withId(R.id.name)).perform(typeText("Hello")).check(matches(withText("Hello")))
     }
 
+    //    check the Edit fields
     @Test
     fun validateEditText_phoneNumber() {
         val activityScenario = ActivityScenario.launch(MainActivity::class.java)
@@ -85,6 +97,7 @@ class MainActivityTest {
             .check(matches(withText("08063904372")))
     }
 
+    //    check the Edit fields
     @Test
     fun validateEditText_email() {
         val activityScenario = ActivityScenario.launch(MainActivity::class.java)
@@ -92,14 +105,7 @@ class MainActivityTest {
             .check(matches(withText("ko@gmail.com")))
     }
 
-//    @Test
-//    fun validate_Toast(){
-//        val activityScenario = ActivityScenario.launch(MainActivity::class.java)
-//        onView(withText(R.string.message)).inRoot(new ToastMatcher())
-//            .check(matches(withText("Please all fields are required!"))
-//    }
-
-    /****/
+    /**checks the item is actually selected on the spinner**/
     @Test
     fun select_item_on_spinner() {
         val activityScenario = ActivityScenario.launch(MainActivity::class.java)
@@ -111,13 +117,8 @@ class MainActivityTest {
         ).perform(click())
     }
 
-//    @Test
-//    fun verify_text_is_correct(){
-////        not working
-//        val activityScenario = ActivityScenario.launch(MainActivity::class.java)
-//        onView(withId(R.id.spinner)).check(matches(withText(containsString("Male"))))
-//    }
 
+//    checks click on the spinner
     @Test
     fun open_the_item_selection() {
         val activityScenario = ActivityScenario.launch(MainActivity::class.java)

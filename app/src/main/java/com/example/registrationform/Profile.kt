@@ -15,6 +15,7 @@ class Profile : AppCompatActivity() {
         var userGender = findViewById<TextView>(R.id.user_gender)
         var intent = getIntent()
 
+// Getting the data from the main activity
         val str = intent.getStringExtra("FullName")
         val mobileNumber = intent.getStringExtra("PhoneNumber")
         val email = intent.getStringExtra("Email")
@@ -24,6 +25,7 @@ class Profile : AppCompatActivity() {
         userMail.text = email
         userGender.text = gender
 
+/**     Getting the id of the button and added a click to the button**/
         var back_button = findViewById<ImageButton>(R.id.back_btn)
 
         back_button.setOnClickListener{
